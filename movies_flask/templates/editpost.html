@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+</head>
+<body>
+    <a href="127.0.0.1:5000/index">Trang chủ</a><br>
+    <a href="127.0.0.1:5000/about">Giới thiệu </a>
+    <a href="127.0.0.1:5000/resignation"> Đơn xin tăng lương </a><br>
+    <h2>Sửa thông tin các Posts</h2>
+
+    <h3>{{ r1 }}</h3>
+    <form action="/editpost/{{ r0 }}" method="POST">
+        
+        <table >
+            <tr>
+                <td>Sửa tiêu đề</td>
+            </tr>
+            <tr>
+                <td> <input type="text" name="title" value="{{ r1 }}" ></td>
+            </tr>
+            <tr>
+                <td>Sủa nội dung Blog</td>
+            </tr>
+            <tr>
+                <td> <textarea name="contain" >{{ r2 }}</textarea></td>
+            </tr>
+            <tr>
+                <td> <button type="submit">Lưu bài viết </button></td>
+            </tr>
+        </table>
+    </form>
+     
+</body>
+</html>

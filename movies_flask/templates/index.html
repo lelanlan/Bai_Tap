@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <a href="index">Trang chủ</a> <br>
+    <a href="about">Giới thiệu</a> <br>
+    <a href="resignation"> Đơn xin tăng lương </a>
+
+    <h2>Hãy đăng một Blog</h2>
+    <form action="/index" method="POST">
+     
+        <table >
+            <tr>
+                <td>Nhập tiêu đề Blog</td>
+            </tr>
+            <tr>
+                <td> <input type="text" name="title" ></td>
+            </tr>
+            <tr>
+                <td>Nhập nội dung Blog</td>
+            </tr>
+            <tr>
+                <td> <textarea name="contain"></textarea> </td>
+            </tr>
+            <tr>
+                <td> <button type="submit">Đăng bài viết </button></td>
+            </tr>
+        </table>
+    
+    </form>
+    <h2>Danh sách các bài Posts</h2>
+    
+    {% for i in rows: %}
+      <p>Post at: {{ i[3] }} </p> 
+      <p> {{ i[1] }} </p> 
+      <p> {{ i[2] }} </p> 
+      <a href="editpost/{{ i[0] }}">Sửa bài viết</a>
+      <hr  width="100%"  />
+      
+    {% endfor %}  
+</body>
+</html>

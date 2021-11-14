@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="about">Giới thiệu</a><br>
+    <a href="resignation"> Đơn xin tăng lương </a><br>
+    <a href="index">Trang chủ</a><br>
+    <h2>Đơn xin tăng lương</h2>
+    <h4>  Nhanh chóng tạo một tập tin xin tăng lương</h4>
+    <form action="/resignation" method="POST">
+        
+        <table >
+            <tr>
+                <td>Fullname</td>
+            </tr>
+            <tr>
+                <td> <input type="text" name="name" ></td>
+            </tr>
+            <tr>
+                <td>Reason</td>
+            </tr>
+            <tr>
+                <td> <textarea name="reason" ></textarea></td>
+            </tr>
+            <tr>
+                <td> <button type="submit">Tạo file </button></td>
+            </tr>
+        </table>
+    </form>
+        <a href="/static/demo.docx" download="/static/demo.docx" > Download </a>
+</body>
+</html>
