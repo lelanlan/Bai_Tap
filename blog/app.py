@@ -17,7 +17,7 @@ cnx = connect(**config)
 
 app = Flask(__name__)
 
-@app.route('/index', methods=["GET"])
+@app.route('/', methods=["GET"])
 def render_form():
     cur = cnx.cursor()
     sql="select * from blog_uer"
@@ -36,7 +36,7 @@ def about():
 
 
 
-@app.route('/index', methods=["POST"])
+@app.route('/', methods=["POST"])
 def new_post():
     cur = cnx.cursor()
     title=request.form["title"]
@@ -49,7 +49,7 @@ def new_post():
     except:
         cnx.rollback()
     #cnx.close()
-    return redirect("/index", code=302)
+    return redirect("/", code=302)
 
 @app.route('/editpost/<id>', methods=["GET"])
 def render_form_edit(id):
@@ -60,8 +60,6 @@ def render_form_edit(id):
          r0=row[0]
          r1=row[1]
          r2=row[2]
-
-
     #cnx.close()
     return render_template("editpost.html",r0=r0,r1=r1,r2=r2)
 
